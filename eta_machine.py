@@ -13,7 +13,15 @@ Test whether list of tuples represents eta-product
 # Input L = [(r1, s1),..,(rn, sn)] and MM = desired order of q-expansion.
 def EtaProd(L, MM, info=None):
     """
-    Gives q-exp to degree MM if input is eta-product.
+    Returns q-exp of given eta-product and optional info on level, weight, etc.
+
+    Args:
+        L : List of tuples [(int10, int11), (int20, int21), ...]
+        MM : int
+        info : NoneType 
+    Returns:
+        info == None : mutable q-series of corresponding modular form
+        info == 1 : prints q-series and level, weight, cusp denominators, character
     """
     eta = qexp_eta(ZZ[['q']], MM)
     # Level of eta-product:
